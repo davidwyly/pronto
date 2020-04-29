@@ -54,7 +54,7 @@ These installation instructions assume that the following is already installed o
    - `run_tests`
 
 #### Postman
-1. Import collection from `~/mb/storage/Pronto.postman_collection.json`
+1. Import collection from `~/pronto/storage/Pronto.postman_collection.json`
 2. Set up a new postman environment
    1. Click the gear icon in top-right corner
    2. Click `Add`
