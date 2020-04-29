@@ -1,0 +1,31 @@
+{
+  "name": "Davidwyly/Pronto",
+  "description": "BH Test",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Davidwyly\\": "src/Davidwyly/"
+    }
+  },
+  "config": {
+    "preferred-install": "source"
+  },
+  "require": {
+    "php": "^7.2",
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "ext-ctype": "*",
+    "ext-mbstring": "*",
+    "ext-pdo": "*",
+    "vlucas/phpdotenv": "^2.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  },
+  "authors": [
+    {
+      "name": "David Wyly",
+      "email": "david.wyly@gmail.com"
+    }
+  ]
+}
