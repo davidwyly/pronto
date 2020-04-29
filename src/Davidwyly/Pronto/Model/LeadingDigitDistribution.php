@@ -25,12 +25,19 @@ class LeadingDigitDistribution {
     }
 
     /**
-     * @param $d
+     * @param $digit
      *
      * @return false|float
+     * @throws Exception
      */
-    static public function getProbabilityFromBenfordsLaw($d) {
-        return round(log10(1 + (1 / $d)), 6);
+    static public function getProbabilityFromBenfordsLaw($digit) {
+        if (!is_int($digit)) {
+            throw new Exception("Not a digit");
+        }
+        if ($digit < 0 || $digit > 9) {
+            throw new Exception("Invalid range");
+        }
+        return round(log10(1 + (1 / $digit)), 6);
     }
 
     /**
