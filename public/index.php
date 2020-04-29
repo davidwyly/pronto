@@ -18,6 +18,10 @@ try {
         (new Controller\TestController($request))->fibonacci();
     });
 
+    $router->post('/custom', function (Request $request) {
+        (new Controller\TestController($request))->custom();
+    });
+
 } catch (Exception $e) {
     http_response_code($e->getCode());
     die(json_encode(['error' => $e->getMessage()], JSON_PRETTY_PRINT));

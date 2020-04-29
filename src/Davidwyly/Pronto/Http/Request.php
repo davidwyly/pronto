@@ -6,6 +6,8 @@ namespace Davidwyly\Pronto\Http;
 
 use Davidwyly\Pronto\Exception\RequestException;
 use Davidwyly\Pronto\Http\Controller\Controller;
+use SimpleXMLElement;
+use stdClass;
 
 /**
  * @property array $post
@@ -139,24 +141,27 @@ class Request
     /**
      * Returns XML content from POST
      *
-     * @return \SimpleXMLElement
+     * @return SimpleXMLElement
      */
-    private function getXmlInput(): \SimpleXMLElement
+    private function getXmlInput(): SimpleXMLElement
     {
-        return new \SimpleXMLElement($this->getRawInput());
+        return new SimpleXMLElement($this->getRawInput());
     }
 
     /**
      * Returns JSON content from POST
      *
-     * @return \stdClass
+     * @return stdClass
      * @throws RequestException
      */
-    private function getJsonInput(): \stdClass
+    private function getJsonInput(): stdClass
     {
-        $json = json_decode($this->getRawInput());
+        $json = json_decode($this->getRawInput(), false);
         if (is_null($json)) {
             throw new RequestException("JSON could not be decoded", Controller::HTTP_CLIENT_ERROR);
+        }
+        if (!is_object($json)) {
+            $json = (object)$json;
         }
         return $json;
     }
