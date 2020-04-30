@@ -16,6 +16,8 @@ class TestController extends Controller
     use Collect\Json;
     use Collect\Xml;
 
+    public const FIBONACCI_ITERATIONS = 1000; // warning: do not increase this!
+
     /**
      * @throws Exception
      */
@@ -24,7 +26,7 @@ class TestController extends Controller
         try {
             $distribution  = new LeadingDigitDistribution();
             $leadingDigits = [];
-            for ($i = 1; $i <= 50; $i++) {
+            for ($i = 1; $i <= self::FIBONACCI_ITERATIONS; $i++) {
                 $fibonacci       = Fibonacci::calculateValueByIndex($i);
                 $leadingDigit    = LeadingDigitDistribution::getLeadingDigit($fibonacci);
                 $leadingDigits[] = $leadingDigit;
