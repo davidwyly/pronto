@@ -4,7 +4,8 @@ namespace Davidwyly\Pronto\Model;
 
 use Exception;
 
-class LeadingDigitDistribution {
+class LeadingDigitDistribution
+{
     public int $frequency1 = 0;
     public int $frequency2 = 0;
     public int $frequency3 = 0;
@@ -20,8 +21,9 @@ class LeadingDigitDistribution {
      *
      * @return false|string
      */
-    static public function getLeadingDigit($value) {
-        return substr((string)$value,0,1);
+    static public function getLeadingDigit($value)
+    {
+        return substr((string)$value, 0, 1);
     }
 
     /**
@@ -30,7 +32,8 @@ class LeadingDigitDistribution {
      * @return false|float
      * @throws Exception
      */
-    static public function getProbabilityFromBenfordsLaw($digit) {
+    static public function getProbabilityFromBenfordsLaw($digit)
+    {
         if (!is_int($digit)) {
             throw new Exception("Not a digit");
         }
@@ -45,7 +48,8 @@ class LeadingDigitDistribution {
      *
      * @throws Exception
      */
-    public function assignFrequencyByLeadingDigits($leadingDigits): void {
+    public function assignFrequencyByLeadingDigits($leadingDigits): void
+    {
         foreach ($leadingDigits as $leadingDigit) {
             $this->assignFrequencyByLeadingDigit($leadingDigit);
         }
@@ -56,7 +60,8 @@ class LeadingDigitDistribution {
      *
      * @throws Exception
      */
-    public function assignFrequencyByLeadingDigit($leadingDigit): void {
+    public function assignFrequencyByLeadingDigit($leadingDigit): void
+    {
         switch ($leadingDigit) {
             case 1:
                 $this->frequency1++;
@@ -94,11 +99,11 @@ class LeadingDigitDistribution {
     }
 
 
-
     /**
      * @return int
      */
-    public function getTotalCount() {
+    public function getTotalCount()
+    {
         return $this->frequency1 + $this->frequency2 + $this->frequency3 + $this->frequency4 + $this->frequency5
             + $this->frequency6 + $this->frequency7 + $this->frequency8 + $this->frequency9;
     }
@@ -109,7 +114,8 @@ class LeadingDigitDistribution {
      * @return int
      * @throws Exception
      */
-    public function getDigitCount($digit) {
+    public function getDigitCount($digit)
+    {
         switch ($digit) {
             case 1:
                 return $this->frequency1;
@@ -152,9 +158,10 @@ class LeadingDigitDistribution {
      * @return float
      * @throws Exception
      */
-    public function getDistributionByDigit($digit): float {
+    public function getDistributionByDigit($digit): float
+    {
         $totalCount = $this->getTotalCount();
         $digitCount = $this->getDigitCount($digit);
-        return round($digitCount / $totalCount,6);
+        return round($digitCount / $totalCount, 6);
     }
 }

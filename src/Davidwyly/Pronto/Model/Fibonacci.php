@@ -2,14 +2,16 @@
 
 namespace Davidwyly\Pronto\Model;
 
-class Fibonacci {
+class Fibonacci
+{
 
     /**
      * @param $index
      *
      * @return float|int
      */
-    static public function calculateValueByIndex($index) {
+    static public function calculateValueByIndex($index)
+    {
         if ($index === 0
             || $index === 1
             || $index === -1

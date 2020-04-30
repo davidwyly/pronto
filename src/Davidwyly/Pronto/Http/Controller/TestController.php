@@ -44,22 +44,22 @@ class TestController extends Controller
     /**
      * POST {url}/custom
      *
-     * @request JSON array of integers
+     * @request  JSON array of integers
      * @response JSON object
      */
     public function custom()
     {
         try {
-            $data         = $this->request->post;
-            $values       = (array)$data['json'];
-            $distribution = new LeadingDigitDistribution();
+            $data          = $this->request->post;
+            $values        = (array)$data['json'];
+            $distribution  = new LeadingDigitDistribution();
             $leadingDigits = [];
             foreach ($values as $key => $value) {
-                $leadingDigit = LeadingDigitDistribution::getLeadingDigit($value);
+                $leadingDigit    = LeadingDigitDistribution::getLeadingDigit($value);
                 $leadingDigits[] = $leadingDigit;
                 $distribution->assignFrequencyByLeadingDigit($leadingDigit);
             }
-            $results = $this->calculateResults($distribution,$leadingDigits);
+            $results = $this->calculateResults($distribution, $leadingDigits);
             $this->renderSuccess($results);
         } catch (\Exception $e) {
             $this->renderFail($e);
@@ -131,8 +131,9 @@ class TestController extends Controller
             $control[] = LeadingDigitDistribution::getProbabilityFromBenfordsLaw($i);
         }
 
-        $results                      = [];
-        $zScore                       = $this->zScore($control, $treatment);
+        $results                       = [];
+        $zScore                        = $this->zScore($control, $treatment);
+        $results['sample-size']        = count($treatment);
         $results['z-score']            = $zScore;
         $results['standard-deviation'] = $this->standardDeviation($treatment);
         for ($i = 1; $i <= 9; $i++) {
