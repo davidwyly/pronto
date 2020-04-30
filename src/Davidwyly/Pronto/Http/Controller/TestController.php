@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Davidwyly\Pronto\Http\Controller;
 
 use Davidwyly\Pronto\Http\Controller\Collect;
-use Davidwyly\Pronto\Http\Controller\Parse;
-use Davidwyly\Pronto\Exception\ControllerException;
 use Davidwyly\Pronto\Model\LeadingDigitDistribution;
 use Davidwyly\Pronto\Model\Fibonacci;
 use Exception;
@@ -19,6 +17,10 @@ class TestController extends Controller
     public const FIBONACCI_ITERATIONS = 1000; // warning: do not increase this!
 
     /**
+     * GET {url}/fibonacci
+     *
+     * @response JSON object
+     *
      * @throws Exception
      */
     public function fibonacci()
@@ -39,6 +41,12 @@ class TestController extends Controller
         }
     }
 
+    /**
+     * POST {url}/custom
+     *
+     * @request JSON array of integers
+     * @response JSON object
+     */
     public function custom()
     {
         try {
@@ -63,7 +71,7 @@ class TestController extends Controller
      *
      * @return float
      */
-    function standardDeviation($values)
+    private function standardDeviation($values)
     {
         $count    = count($values);
         $variance = 0.0;
@@ -80,11 +88,6 @@ class TestController extends Controller
         return (float)sqrt($variance / ($count - 1));
     }
 
-    function cr($t)
-    {
-        return $t[1] / $t[0];
-    }
-
     /**
      *
      * @param $control
@@ -92,16 +95,23 @@ class TestController extends Controller
      *
      * @return float|int
      */
-    function zScore(array $control, array $treatment)
+    private function zScore(array $control, array $treatment)
     {
         $c = $control;
         $t = $treatment;
-        $z = $this->cr($t) - $this->cr($c);
-        $s = ($this->cr($t) * (1 - $this->cr($t))) / $t[0] + ($this->cr($c) * (1 - $this->cr($c))) / $c[0];
+        $z = ($t[1] / $t[0]) - ($c[1] / $c[0]);
+        $s = (($t[1] / $t[0]) * (1 - ($t[1] / $t[0]))) / $t[0] + (($c[1] / $c[0]) * (1 - ($c[1] / $c[0]))) / $c[0];
         return $z / sqrt($s);
     }
 
-    function marginOfError($zScore, $numberOfInterest, $sampleSize)
+    /**
+     * @param $zScore
+     * @param $numberOfInterest
+     * @param $sampleSize
+     *
+     * @return float|int
+     */
+    private function marginOfError($zScore, $numberOfInterest, $sampleSize)
     {
         $p = $numberOfInterest / $sampleSize;
         return $zScore * sqrt(($p * (abs(1 - $p))) / $sampleSize);
@@ -147,6 +157,13 @@ class TestController extends Controller
         return $results;
     }
 
+    /**
+     * @param $expected
+     * @param $actual
+     * @param $marginOfError
+     *
+     * @return bool
+     */
     private function isWithinMarginOfError($expected, $actual, $marginOfError)
     {
         if ($actual < ($expected + $marginOfError)

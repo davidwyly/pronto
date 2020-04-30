@@ -3,6 +3,12 @@
 namespace Davidwyly\Pronto\Model;
 
 class Fibonacci {
+
+    /**
+     * @param $index
+     *
+     * @return float|int
+     */
     static public function calculateValueByIndex($index) {
         if ($index === 0
             || $index === 1
