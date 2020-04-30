@@ -68,7 +68,7 @@ These installation instructions assume that the following is already installed o
    6. Select the environment from the drop-down in the top-right corner
 3. Requests can be found within the `Pronto` collection
 
-#### Fibonacci Endpoint Results
+#### Fibonacci Endpoint Results (1000 iterations)
 
 ```json
 {
