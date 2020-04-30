@@ -144,8 +144,8 @@ These installation instructions assume that the following is already installed o
 
 ```json
 {
-    "zScore": 1.6379464099227126,
-    "standardDeviation": 2.1521345609224443,
+    "z-score": 1.6379464099227126,
+    "standard-deviation": 2.1521345609224443,
     "1": {
         "expected": "30.103%",
         "actual": "14.2574%",
