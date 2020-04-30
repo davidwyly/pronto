@@ -68,10 +68,11 @@ These installation instructions assume that the following is already installed o
    6. Select the environment from the drop-down in the top-right corner
 3. Requests can be found within the `Pronto` collection
 
-#### Fibonacci Endpoint Results (1000 iterations)
+#### Fibonacci Endpoint Results
 
 ```json
 {
+    "sample-size": 1000,
     "z-score": 0.4621525165147706,
     "standard-deviation": 2.460911840575985,
     "1": {
@@ -144,6 +145,7 @@ These installation instructions assume that the following is already installed o
 
 ```json
 {
+    "sample-size": 505,
     "z-score": 1.6379464099227126,
     "standard-deviation": 2.1521345609224443,
     "1": {
