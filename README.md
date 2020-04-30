@@ -73,68 +73,68 @@ These installation instructions assume that the following is already installed o
 ```json
 {
     "zScore": 0.4621525165147706,
-    "standardDeviation": 2.506237117631913,
+    "standardDeviation": 2.460911840575985,
     "1": {
         "expected": "30.103%",
-        "actual": "32%",
-        "variance": "1.897%",
-        "margin-of-error": "3.0488%",
+        "actual": "30.1%",
+        "variance": "-0.003%",
+        "margin-of-error": "0.6704%",
         "conforms-to-benford's-law": true
     },
     "2": {
         "expected": "17.6091%",
-        "actual": "18%",
-        "variance": "0.3909%",
-        "margin-of-error": "2.511%",
+        "actual": "17.7%",
+        "variance": "0.0909%",
+        "margin-of-error": "0.5578%",
         "conforms-to-benford's-law": true
     },
     "3": {
         "expected": "12.4939%",
-        "actual": "12%",
-        "variance": "-0.4939%",
-        "margin-of-error": "2.1239%",
+        "actual": "12.5%",
+        "variance": "0.0061%",
+        "margin-of-error": "0.4833%",
         "conforms-to-benford's-law": true
     },
     "4": {
         "expected": "9.691%",
-        "actual": "8%",
-        "variance": "-1.691%",
-        "margin-of-error": "1.7731%",
+        "actual": "9.6%",
+        "variance": "-0.091%",
+        "margin-of-error": "0.4305%",
         "conforms-to-benford's-law": true
     },
     "5": {
         "expected": "7.9181%",
         "actual": "8%",
         "variance": "0.0819%",
-        "margin-of-error": "1.7731%",
+        "margin-of-error": "0.3965%",
         "conforms-to-benford's-law": true
     },
     "6": {
         "expected": "6.6947%",
-        "actual": "6%",
-        "variance": "-0.6947%",
-        "margin-of-error": "1.5522%",
+        "actual": "6.7%",
+        "variance": "0.0053%",
+        "margin-of-error": "0.3654%",
         "conforms-to-benford's-law": true
     },
     "7": {
         "expected": "5.7992%",
-        "actual": "6%",
-        "variance": "0.2008%",
-        "margin-of-error": "1.5522%",
+        "actual": "5.6%",
+        "variance": "-0.1992%",
+        "margin-of-error": "0.336%",
         "conforms-to-benford's-law": true
     },
     "8": {
         "expected": "5.1153%",
-        "actual": "6%",
-        "variance": "0.8847%",
-        "margin-of-error": "1.5522%",
+        "actual": "5.3%",
+        "variance": "0.1847%",
+        "margin-of-error": "0.3274%",
         "conforms-to-benford's-law": true
     },
     "9": {
         "expected": "4.5757%",
-        "actual": "4%",
-        "variance": "-0.5757%",
-        "margin-of-error": "1.2808%",
+        "actual": "4.5%",
+        "variance": "-0.0757%",
+        "margin-of-error": "0.303%",
         "conforms-to-benford's-law": true
     }
 }
