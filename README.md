@@ -5,7 +5,7 @@ This is a project for a code challenge: Write a program in whatever language you
 
 This project was written in PHP 7.4. It exists within a bare-bones RESTful API mini-framework that I previously wrote for testing sample code through Postman.
 
-The `margin of error` is calculated for each leading digit. If the `actual distribution percentage` is within the `expected distribution percentage` plus or minus the `margin of error`, the assumption is made that the distribution of that leading digit conforms to Benford's law.
+The `margin of error` is calculated for each distribution of a leading digit (1-9). If the `actual distribution percentage` is within the `expected distribution percentage` plus or minus the `margin of error`, the assumption is made that the distribution of that leading digit conforms to Benford's law.
 
 ## Project Structure
 - Environment variables go into `/config/.env` and newly-required `.env` definitions are checked into `/config/bootstrap.php`
