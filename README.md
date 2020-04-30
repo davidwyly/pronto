@@ -63,3 +63,147 @@ These installation instructions assume that the following is already installed o
    5. Click `Add`
    6. Select the environment from the drop-down in the top-right corner
 3. Requests can be found within the `Pronto` collection
+
+#### Fibonacci Endpoint Results
+
+```json
+{
+    "zScore": 0.4621525165147706,
+    "standardDeviation": 2.506237117631913,
+    "1": {
+        "expected": "30.103%",
+        "actual": "32%",
+        "variance": "1.897%",
+        "margin-of-error": "3.0488%",
+        "conforms-to-benford's-law": true
+    },
+    "2": {
+        "expected": "17.6091%",
+        "actual": "18%",
+        "variance": "0.3909%",
+        "margin-of-error": "2.511%",
+        "conforms-to-benford's-law": true
+    },
+    "3": {
+        "expected": "12.4939%",
+        "actual": "12%",
+        "variance": "-0.4939%",
+        "margin-of-error": "2.1239%",
+        "conforms-to-benford's-law": true
+    },
+    "4": {
+        "expected": "9.691%",
+        "actual": "8%",
+        "variance": "-1.691%",
+        "margin-of-error": "1.7731%",
+        "conforms-to-benford's-law": true
+    },
+    "5": {
+        "expected": "7.9181%",
+        "actual": "8%",
+        "variance": "0.0819%",
+        "margin-of-error": "1.7731%",
+        "conforms-to-benford's-law": true
+    },
+    "6": {
+        "expected": "6.6947%",
+        "actual": "6%",
+        "variance": "-0.6947%",
+        "margin-of-error": "1.5522%",
+        "conforms-to-benford's-law": true
+    },
+    "7": {
+        "expected": "5.7992%",
+        "actual": "6%",
+        "variance": "0.2008%",
+        "margin-of-error": "1.5522%",
+        "conforms-to-benford's-law": true
+    },
+    "8": {
+        "expected": "5.1153%",
+        "actual": "6%",
+        "variance": "0.8847%",
+        "margin-of-error": "1.5522%",
+        "conforms-to-benford's-law": true
+    },
+    "9": {
+        "expected": "4.5757%",
+        "actual": "4%",
+        "variance": "-0.5757%",
+        "margin-of-error": "1.2808%",
+        "conforms-to-benford's-law": true
+    }
+}
+```
+
+#### Custom Array Endpoint Results
+
+```json
+{
+    "zScore": 1.6379464099227126,
+    "standardDeviation": 2.1521345609224443,
+    "1": {
+        "expected": "30.103%",
+        "actual": "14.2574%",
+        "variance": "-15.8456%",
+        "margin-of-error": "2.5484%",
+        "conforms-to-benford's-law": false
+    },
+    "2": {
+        "expected": "17.6091%",
+        "actual": "23.7624%",
+        "variance": "6.1533%",
+        "margin-of-error": "3.1023%",
+        "conforms-to-benford's-law": false
+    },
+    "3": {
+        "expected": "12.4939%",
+        "actual": "19.2079%",
+        "variance": "6.714%",
+        "margin-of-error": "2.8713%",
+        "conforms-to-benford's-law": false
+    },
+    "4": {
+        "expected": "9.691%",
+        "actual": "0%",
+        "variance": "-9.691%",
+        "margin-of-error": "0%",
+        "conforms-to-benford's-law": false
+    },
+    "5": {
+        "expected": "7.9181%",
+        "actual": "14.2574%",
+        "variance": "6.3393%",
+        "margin-of-error": "2.5484%",
+        "conforms-to-benford's-law": false
+    },
+    "6": {
+        "expected": "6.6947%",
+        "actual": "9.505%",
+        "variance": "2.8103%",
+        "margin-of-error": "2.1377%",
+        "conforms-to-benford's-law": false
+    },
+    "7": {
+        "expected": "5.7992%",
+        "actual": "19.0099%",
+        "variance": "13.2107%",
+        "margin-of-error": "2.86%",
+        "conforms-to-benford's-law": false
+    },
+    "8": {
+        "expected": "5.1153%",
+        "actual": "0%",
+        "variance": "-5.1153%",
+        "margin-of-error": "0%",
+        "conforms-to-benford's-law": false
+    },
+    "9": {
+        "expected": "4.5757%",
+        "actual": "0%",
+        "variance": "-4.5757%",
+        "margin-of-error": "0%",
+        "conforms-to-benford's-law": false
+    }
+}
+```
