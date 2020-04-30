@@ -123,8 +123,8 @@ class TestController extends Controller
 
         $results                      = [];
         $zScore                       = $this->zScore($control, $treatment);
-        $results['zScore']            = $zScore;
-        $results['standardDeviation'] = $this->standardDeviation($treatment);
+        $results['z-score']            = $zScore;
+        $results['standard-deviation'] = $this->standardDeviation($treatment);
         for ($i = 1; $i <= 9; $i++) {
             $actual                                    = $distribution->getDistributionByDigit($i);
             $expected                                  = $control[$i - 1];
