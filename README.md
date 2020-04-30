@@ -3,7 +3,7 @@
 ## Summary
 This is a project for a code challenge: Write a program in whatever language you prefer that takes an array of integers and decides whether those integers conform to Benford's Law.
 
-This project was written in PHP 7.4. It exists within a bare-bones RESTful API mini-framework that I previously wrote for testing sample code through Postman.
+This project was written in PHP 7.4. It exists within a bare-bones RESTful API mini-framework that I previously wrote for testing sample code through Postman HTTP requests.
 
 The `margin of error` is calculated for each distribution of a leading digit (1-9). If the `actual distribution percentage` is within the `expected distribution percentage` plus or minus the `margin of error`, the assumption is made that the distribution of that leading digit conforms to Benford's law.
 
