@@ -1,7 +1,11 @@
 # pronto
 
 ## Summary
-This is a project for a code challenge.
+This is a project for a code challenge: Write a program in whatever language you prefer that takes an array of integers and decides whether those integers conform to Benford's Law.
+
+This project was written in PHP 7.4. It exists within a bare-bones RESTful API mini-framework that I previously wrote for testing sample code through Postman.
+
+In determining whether or not a distribution of a leading digit conforms to Benford's Law, the margin of error is calculated for each leading digit. If the actual distribution percentage is within the expected plus or minus the margin of error.
 
 ## Project Structure
 - Environment variables go into `/config/.env` and newly-required `.env` definitions are checked into `/config/bootstrap.php`
